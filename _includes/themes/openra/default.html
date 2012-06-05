@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OpenRA - {{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="{{ ASSET_PATH }}/css/layout.css" rel="stylesheet">
+
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+  </head>
+
+  <body>
+    <div id="Wrap">
+      <div style="padding-top: 30px;">
+        <div id="Header" class="bar typography">
+          <h1><img src="{{ ASSET_PATH }}//images/soviet-logo.png" />OpenRA</h1>
+        </div>
+        <div id="Container">
+          <div id="Navigation" class="typography">
+            {% assign pages_list = site.pages %}
+            {% assign group = 'navigation' %}
+            {% include JB/pages_list %}
+            <span class="links"><a href="http://www.sleipnirstuff.com/forum/viewforum.php?f=80">Forum</a></span>
+            <span class="links"><a href="irc://chat.freenode.net/openra">IRC</a></span>
+            <span class="links"><a href="http://twitter.com/openRA">Twitter</a></span>
+            <span class="links"><a href="http://github.com/OpenRA/OpenRA/wiki">Wiki</a></span>
+          </div>
+          <div id="Layout">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Footer" class="bar typography">
+      <p id="trademarks">
+      Copyright &copy; 2007-2012 {{ site.author.name }}<br />
+      Platform icons by Tatice (<a href="http://tatice.deviantart.com/">http://tatice.deviantart.com/</a>)
+      </p>
+    </div>
+    {% include JB/analytics %}
+  </body>
+</html>

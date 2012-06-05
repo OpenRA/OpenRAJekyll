@@ -1,0 +1,15 @@
+{% for order in (1..4) %}
+  {% for node in pages_list %}
+    {% if node.page_order == order %}
+      {% if node.title != null %}
+        {% if group == null or group == node.group %}
+          {% if page.url == node.url %}
+            <span class="links"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></span>
+          {% else %}
+            <span class="links"><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></span>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}

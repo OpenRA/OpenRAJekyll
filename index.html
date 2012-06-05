@@ -1,0 +1,45 @@
+---
+layout: default
+title: Home
+group: navigation
+permalink: /
+page_order: 1
+---
+{% include JB/setup %}
+
+<div id="Sidebar">
+<div id="Screenshot"><img width="300px" src="assets/themes/openra/images/screenshots/ss11.jpg"/></div>
+<a href="download/linux/"><img width="306" height="68" src="assets/themes/openra/images/linux_download.png" /></a>
+<p class="download">
+<a href="download/win/">Download OpenRA for Windows</a>
+</p>
+<p class="download">
+<a href="download/osx/">Download OpenRA for OS X</a>
+</p>
+<div style="margin: 5px auto; width: 100%">
+<span class="stats">
+<strong id="stats_games">122014</strong><span class="desc">public games played</span>
+</span>
+<span class="stats">
+<strong id="stats_down">118881</strong><span class="desc">downloads</span>
+</span>
+</div>
+<p>
+<a href="license/"><img src="assets/themes/openra/images/gplv3-127x51.png" alt="GPLv3 Logo" style="border: none; margin-top: 5px;"/></a>
+</p>
+</div>
+
+<div id="Content" class="twocolumn typography">
+
+
+<h2>Welcome Back, Commander</h2>
+<p>OpenRA is a Libre/Free Real Time Strategy game engine supporting early Westwood games like Command &amp; Conquer and Command &amp; Conquer: Red Alert.</p>
+
+<h2>News</h2>
+<ul id="NewsList" class="rounded">
+{% for post in site.posts %}
+<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+</div>
